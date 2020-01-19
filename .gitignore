@@ -1,3 +1,6 @@
-.vscode
+# Compiled source #
+App/Librarys/*.so
 
-App/Librarys/Source
+
+##
+.vscode
