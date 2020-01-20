@@ -4,3 +4,8 @@ App/Librarys/Source
 
 ##
 .vscode
+App/main
+App/main.o
+main
+
+App/Librarys
