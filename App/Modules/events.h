@@ -1,7 +1,11 @@
 #ifndef EVENTS_H
 #define EVENTS_H
-void checkEvent()
-{
-    
-}
+
+#include <SFML/Graphics.hpp>
+#include "SVariables.h"
+
+
+//event management
+void checkEvents(Variables* variables,sf::Event* event);
+
 #endif
