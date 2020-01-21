@@ -1,5 +1,5 @@
 # Source code #
-App/Librarys/Source
+App/Librarys
 
 
 ##
@@ -8,4 +8,3 @@ App/main
 App/main.o
 main
 
-App/Librarys

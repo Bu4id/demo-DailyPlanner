@@ -1,23 +1,20 @@
 #include <SFML/Graphics.hpp>
-#include "Classes/Widgets/Button.h"
+#include "Modules/SVariables.h"
+#include "Modules/Widgets/Button.h"
+#include "Modules/window.h"
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    //Initialization of variables that will be required to store data throughout the cycle
+    Variables variables;
+    variables.window.create(sf::VideoMode(500, 600), "SFML works!");
+
+    //sf::RenderWindow window(sf::VideoMode(500, 600), "SFML works!");
+    variables.window.setFramerateLimit(20);
+    
     Button button;
     button.initialization();
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(button.getButtonSprite());
-        window.display();
-    }
+    windowView(&variables);
 
     return 0;
 }
