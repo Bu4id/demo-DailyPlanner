@@ -6,6 +6,6 @@
 
 
 //event management
-void checkEvents(Variables* variables,sf::Event* event);
+void checkEvents(Variables* variables,sf::Event* event, sf::Vector2i mousePosition);
 
 #endif

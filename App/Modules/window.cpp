@@ -6,14 +6,12 @@
 void windowView(Variables* variables){
     while (variables->window.isOpen())
     {
+        //take the coordinates of the mouse
+        sf::Vector2i mousePosition = sf::Mouse::getPosition(variables->window);
         sf::Event event;
-        checkEvents(variables,&event);
-        /*-while (variables->window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                variables->window.close();
-        }*/
-        variables->window.clear();
+        checkEvents(variables,&event,mousePosition);
+
+        variables->window.clear(sf::Color(255, 255, 255));
         variables->window.display();
     }
 }

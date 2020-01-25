@@ -7,9 +7,7 @@ void Button::initialization(){
 
     buttonSprite.setTexture(buttonTexture);
     buttonSprite.setPosition(0,0);
-    std::cout <<"!"<<std::endl;
-
-};
+}
 sf::Sprite Button::getButtonSprite(){
     return buttonSprite;
 }
