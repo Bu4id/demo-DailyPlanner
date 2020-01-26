@@ -2,12 +2,12 @@
 #define DATABASE_H
 #include <iostream>
 #include "array.h"
-#include "../Librarys/sqlite3/sqlite3.h"
+#include <sqlite3.h>
 
 class DataBase{
     public:
-        int receiveData(std::string query, std::string** records);
-        int changeData(std::string query);
+        void receiveData(std::string query, std::string** records);
+        void changeData(std::string query);
     private:
         sqlite3_stmt *stmt;
         sqlite3 *db;

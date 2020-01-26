@@ -10,10 +10,14 @@ int main()
     Variables variables;
     //Window settings
     variables.window.create(sf::VideoMode(500, 600), "App",sf::Style::Close | sf::Style::Titlebar);
-    variables.window.setFramerateLimit(20);
+    variables.window.setFramerateLimit(30);
     
+    if (!variables.font.loadFromFile("App/Font/LeagueMono-Medium.ttf")){
+        std::cout << "Error: failed to connect font" << std::endl;
+    };
     //-Button button;
     //-button.initialization();
+    variables.input.initialization(variables.font);
 
     //Window display
     windowView(&variables);

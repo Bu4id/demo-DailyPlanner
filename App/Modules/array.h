@@ -2,6 +2,6 @@
 #define ARRAY_H
 
 #include <iostream>
-void arrayInitialization(std::string** array,int rowСount,int columnCount);
-void arrayСleaning(std::string** array, int rowСount);
+void arrayInitialization(std::string** array,int rowCount,int columnCount);
+void arrayCleaning(std::string** array, int rowCount);
 #endif
