@@ -9,11 +9,22 @@ void checkEvents(Variables* variables, sf::Event event,sf::Vector2i mousePositio
         {
             variables->window.close();
         }
-        if(event.type == event.MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left){
-
-            variables->input.check(event,mousePosition.x,mousePosition.y);
-
-        }
-        variables->input.write(event);
+        if(event.mouseButton.button == sf::Mouse::Left){
+                variables->input.check(event,mousePosition.x,mousePosition.y);
+                
+        }      
+        variables->testButton.click(event,mousePosition.x,mousePosition.y);
+                
+        
+            
+            /*if(event.type == event.MouseButtonReleased){
+                variables->input.check(event,mousePosition.x,mousePosition.y);
+            }*/
+            
+            //variables->testButton.click();
     }
+    variables->input.write(event);
+
+        
+        
 }

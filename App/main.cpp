@@ -15,10 +15,17 @@ int main()
     if (!variables.font.loadFromFile("App/Font/LeagueMono-Medium.ttf")){
         std::cout << "Error: failed to connect font" << std::endl;
     };
-    //-Button button;
-    //-button.initialization();
+    //Texture
+    ;
+    if (!variables.Image.loadFromFile("App/Image/image.png")){
+        std::cout << "Error: failed to connect image" << std::endl;
+    };
+    variables.Texture.loadFromImage(variables.Image);
+    
+    //input
     variables.input.initialization(variables.font);
 
+    variables.testButton.initialization(variables.Texture,sf::IntRect(0,53,121,51),320,20);
     //Window display
     windowView(&variables);
 

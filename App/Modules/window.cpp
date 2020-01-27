@@ -14,6 +14,7 @@ void windowView(Variables* variables){
         variables->window.clear(sf::Color(255, 255, 255));
         //draw
         variables->input.draw(variables->window);
+        variables->window.draw(variables->testButton.getButtinSprite());
         variables->window.display();
     }
 }

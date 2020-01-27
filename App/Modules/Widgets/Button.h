@@ -5,11 +5,14 @@
 
 class Button{
     public:
-        void initialization();
-        sf::Sprite getButtonSprite();
-    private:
-        sf::Image buttonImage;
-        sf::Texture buttonTexture;
+        bool focus;
+        void initialization(sf::Texture& texture,const sf::IntRect& rect, float x, float y);
+        void click(sf::Event event,float x,float y);
+        bool mouseOver(float x,float y);
+        //virtual void event();
+        sf::Sprite getButtinSprite();
+        
+    protected:      
         sf::Sprite buttonSprite;
         
 

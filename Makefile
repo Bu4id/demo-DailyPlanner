@@ -1,6 +1,6 @@
 #
 
-all: main
+all: main clean
 
 main.o: App/main.cpp
 	g++ -c App/main.cpp
