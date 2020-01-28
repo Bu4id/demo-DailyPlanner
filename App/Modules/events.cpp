@@ -9,11 +9,19 @@ void checkEvents(Variables* variables, sf::Event event,sf::Vector2i mousePositio
         {
             variables->window.close();
         }
-        if(event.mouseButton.button == sf::Mouse::Left){
-                variables->input.check(event,mousePosition.x,mousePosition.y);
+        
+        variables->input.write(event,mousePosition.x,mousePosition.y);
                 
-        }      
-        variables->testButton.click(event,mousePosition.x,mousePosition.y);
+        
+        if(variables->addButton.click(event,mousePosition.x,mousePosition.y,sf::Color(0,230,0),sf::Color(49,255,143))){
+            std::cout << "click" <<std::endl;
+            if(variables->input.getText()!=""){
+                std::string query = "INSERT INTO records ( record, performed)VALUES ('"+variables->input.getText()+"',0 );";
+                DataBase db;
+                db.changeData(query);
+            }
+        }
+
                 
         
             
@@ -23,7 +31,7 @@ void checkEvents(Variables* variables, sf::Event event,sf::Vector2i mousePositio
             
             //variables->testButton.click();
     }
-    variables->input.write(event);
+    
 
         
         

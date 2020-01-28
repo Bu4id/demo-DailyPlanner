@@ -6,8 +6,9 @@ class Input{
     public:
         void initialization(sf::Font& font);
         void draw(sf::RenderWindow& window);
-        void check(sf::Event event,float x,float y);
-        void write(sf::Event event);
+        void check(sf::Event event,float x ,float y);
+        void write(sf::Event event, float x, float y);
+        std::string getText();
     private:
         sf::RectangleShape input;
 

@@ -25,7 +25,10 @@ int main()
     //input
     variables.input.initialization(variables.font);
 
-    variables.testButton.initialization(variables.Texture,sf::IntRect(0,53,121,51),320,20);
+    variables.addButton.initialization(variables.Texture,sf::IntRect(0,53,121,51),20,20);
+    variables.allRecords.initialization(variables.Texture,sf::IntRect(0,0,121,50),190,20);
+    variables.notDoneButton.initialization(variables.Texture,sf::IntRect(0,111,121,51),359,20);
+    
     //Window display
     windowView(&variables);
 

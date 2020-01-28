@@ -13,8 +13,10 @@ void windowView(Variables* variables){
 
         variables->window.clear(sf::Color(255, 255, 255));
         //draw
-        variables->input.draw(variables->window);
-        variables->window.draw(variables->testButton.getButtinSprite());
+        //variables->input.draw(variables->window);
+        variables->window.draw(variables->addButton.getButtinSprite());
+        variables->window.draw(variables->notDoneButton.getButtinSprite());
+        variables->window.draw(variables->allRecords.getButtinSprite());
         variables->window.display();
     }
 }

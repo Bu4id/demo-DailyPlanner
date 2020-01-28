@@ -13,6 +13,9 @@ struct Variables{
     Input input;
     sf::Image Image;
     sf::Texture Texture;
-    Button testButton;
+    Button addButton;
+    Button doneButton;
+    Button notDoneButton;
+    Button allRecords;
 };
 #endif

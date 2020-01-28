@@ -9,22 +9,24 @@ void Button::initialization(sf::Texture& texture,const sf::IntRect& rect, float 
     //buttonSprite.setScale(1, 1);
     buttonSprite.setPosition(x,y);
 }
-bool Button::mouseOver(float x,float y){
+bool Button::mouseOver(float x,float y,const sf::Color& overColor){
     if (buttonSprite.getGlobalBounds().contains(x, y)){
-        buttonSprite.setColor(sf::Color(10, 100, 100));
+        buttonSprite.setColor(sf::Color(overColor));
         return true;
     }else{
         buttonSprite.setColor(sf::Color::White);
         return false;
     }
 }
-void Button::click(sf::Event event,float x,float y){
-    if(mouseOver(x, y)){
+bool Button::click(sf::Event event,float x,float y,const sf::Color& clickColor,const sf::Color& overColor){
+    if(mouseOver(x, y, overColor)){
         if (event.type == event.MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left){
-            buttonSprite.setColor(sf::Color(50, 50, 50));
-            std::cout<<"yes"<<std::endl;
+            buttonSprite.setColor(clickColor);
+            //std::cout<<"yes"<<std::endl;
+            return true;
         }
     }
+    return false;
 }
 sf::Sprite Button::getButtinSprite(){
     return buttonSprite;

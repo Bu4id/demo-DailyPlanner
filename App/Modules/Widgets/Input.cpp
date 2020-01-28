@@ -20,14 +20,18 @@ void Input::draw(sf::RenderWindow& window){
     window.draw(inputText);
 }
 //area click test
-void Input::check(sf::Event event,float x,float y){
-    if (input.getGlobalBounds().contains(x, y)){
-        focus = true;
-    }else{
-        focus = false;
+void Input::check(sf::Event event, float x,float y){
+    if(event.mouseButton.button == sf::Mouse::Left && event.type == event.MouseButtonReleased){
+        if (input.getGlobalBounds().contains(x, y)){
+            focus = true;
+        }else{
+            focus = false;
+        }
     }
 }
-void Input::write(sf::Event event){
+void Input::write(sf::Event event,float x, float y){
+    check(event,x,y);
+    
     if(focus && event.type == sf::Event::TextEntered &&sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace)){
         text = text.substr(0, text.size() - 1);;
         inputText.setString(text);
@@ -38,5 +42,10 @@ void Input::write(sf::Event event){
         inputText.setString(text);
         //std::cout <<text<<std::endl;
     }
+    
+}
+
+std::string Input::getText(){
+    return text;
 }
 

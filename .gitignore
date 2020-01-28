@@ -7,4 +7,6 @@ App/Librarys
 App/main
 App/main.o
 main
+test.db
+
 
