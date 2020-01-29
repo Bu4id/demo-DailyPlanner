@@ -6,15 +6,15 @@
 
 class DataBase{
     public:
-        void receiveData(std::string query, std::string** records);
+        void receiveData(std::string query, std::string** &records);
         void changeData(std::string query);
+        int numberOfRecords;
     private:
         sqlite3_stmt *stmt;
         sqlite3 *db;
         char *error = 0;
         int rc;
-        int recordId;
-        int record;
+        
 };
 #endif
 

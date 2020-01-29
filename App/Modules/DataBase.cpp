@@ -13,7 +13,7 @@ void DataBase::changeData(std::string query){
     sqlite3_close(db);
 }
 
-void DataBase::receiveData(std::string query, std::string** records){
+void DataBase::receiveData(std::string query, std::string** &records){
     int i = 0;
     rc = sqlite3_open("test.db", &db);
     if(rc){
@@ -36,6 +36,7 @@ void DataBase::receiveData(std::string query, std::string** records){
         records[i][1]=std::string(record);
         i++;
     }
+    numberOfRecords = i;
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 }

@@ -2,7 +2,7 @@
 #define BUTTON_H
     
 #include <SFML/Graphics.hpp>
-
+#include "../Expansion/ESprite.h"
 class Button{
     public:
         bool focus;
@@ -12,8 +12,8 @@ class Button{
         //virtual void event();
         sf::Sprite getButtinSprite();
         
-    protected:      
-        sf::Sprite buttonSprite;
+    private:      
+        ESprite buttonSprite;
         
 
 };
