@@ -22,11 +22,11 @@ void checkEvents(Variables* variables, sf::Event event,sf::Vector2i mousePositio
             }
         }
         if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel){
-            if(event.mouseWheelScroll.delta==-1 && variables->recordsView.getCenter().y < 465.f){
-                variables->recordsView.move(0.f, 5.f);
+            if(event.mouseWheelScroll.delta==-1 && variables->recordsView.getCenter().y < 10000.f){
+                variables->recordsView.move(0.f, 10.f);
                 std::cout<<variables->recordsView.getCenter().y<<std::endl;
             }else if(variables->recordsView.getCenter().y > 300.f){
-                variables->recordsView.move(0.f, -5.f);
+                variables->recordsView.move(0.f, -10.f);
                 //variables->recordsView.setCenter(250.f, 300.f);
                 std::cout << variables->recordsView.getCenter().y << std::endl;
             }

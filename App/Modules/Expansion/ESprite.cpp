@@ -1,8 +1,8 @@
 #include "ESprite.h"
 
-void ESprite::setRecordId(int a){
+void ESprite::setRecordId(std::string a){
     recordId = a;
 }
-int ESprite::getRecordId(){
+std::string ESprite::getRecordId(){
     return recordId;
 }

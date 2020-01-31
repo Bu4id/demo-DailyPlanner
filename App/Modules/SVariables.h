@@ -20,6 +20,8 @@ struct Variables{
     Button allRecords;
     sf::View recordsView;
     DataBase db;
+    Button* trueButton;
+    Button* falseButton;
     //test
     
     //sf::Text test;

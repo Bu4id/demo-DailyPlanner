@@ -1,5 +1,4 @@
 #include "Button.h"
-#include <iostream>
 
 
 void Button::initialization(sf::Texture& texture,const sf::IntRect& rect, float x, float y)
@@ -28,6 +27,10 @@ bool Button::click(sf::Event event,float x,float y,const sf::Color& clickColor,c
     }
     return false;
 }
-sf::Sprite Button::getButtinSprite(){
+ESprite Button::getButtinSprite(){
     return buttonSprite;
+}
+
+void Button::setId(std::string id){
+    buttonSprite.setRecordId(id);
 }

@@ -30,7 +30,7 @@ int main()
     variables.notDoneButton.initialization(variables.texture,sf::IntRect(0,111,121,51),359,20);
     
     //test
-    //-variables.testView.reset(sf::FloatRect(350.f, 350.f, 350.f, 320.f));
+    //-variables.recordsView.reset(sf::FloatRect(350.f, 350.f, 350.f, 320.f));
     variables.recordsView = variables.window.getDefaultView();
     variables.recordsView.setViewport(sf::FloatRect(0.f, 0.2f, 1.f, 1.f));
 
@@ -43,5 +43,7 @@ int main()
     windowView(&variables);
     std::cout <<"close"<<std::endl;
     arrayCleaning(variables.records,variables.db.numberOfRecords);
+    delete[] variables.trueButton;
+    delete[] variables.falseButton;
     return 0;
 }

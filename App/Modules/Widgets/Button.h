@@ -1,6 +1,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
-    
+
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "../Expansion/ESprite.h"
 class Button{
@@ -10,8 +11,8 @@ class Button{
         bool click(sf::Event event,float x,float y,const sf::Color& clickColor,const sf::Color& overColor);
         bool mouseOver(float x,float y,const sf::Color& overColor);
         //virtual void event();
-        sf::Sprite getButtinSprite();
-        
+        ESprite getButtinSprite();
+        void setId(std::string id);
     private:      
         ESprite buttonSprite;
         
